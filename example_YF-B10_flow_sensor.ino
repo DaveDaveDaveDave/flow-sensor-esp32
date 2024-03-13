@@ -43,7 +43,7 @@ void setup()
   // The Hall-effect sensor is connected to pin 2 which uses interrupt 0.
   // Configured to trigger on a FALLING state change (transition from HIGH
   // state to LOW state)
-  attachInterrupt(sensorPin, pulseCounter, FALLING);
+  attachInterrupt (digitalPinToInterrupt(sensorPin), pulseCounter, FALLING);
 }
 
 /**
@@ -114,7 +114,7 @@ void loop()
     pulseCount = 0;
     
     // Enable the interrupt again now that we've finished sending output
-    attachInterrupt(sensorPin, pulseCounter, FALLING);
+    attachInterrupt (digitalPinToInterrupt(sensorPin), pulseCounter, FALLING);
   }
 }
 
